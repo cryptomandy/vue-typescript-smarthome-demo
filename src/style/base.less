@@ -1,0 +1,131 @@
+// 公共样式和media
+@base-background: #f8f8f8; //默认页面背景颜色
+@base-font: 1rem; //默认html根元素rem数值
+@base-color: #333;//默认字体颜色
+
+.baseStyle(){
+    border: 0;
+    margin: 0;
+    padding: 0;
+    color: @base-color;
+}
+// media查询
+@media screen and (max-width:320px){html{font-size:12px}}
+@media screen and (min-width:321px) and (max-width:375px){html{font-size:12px}}
+@media screen and (min-width:376px) and (max-width:414px){html{font-size:14px}}
+@media screen and (min-width:415px) and (max-width:639px){html{font-size:16px}}
+@media screen and (min-width:640px) and (max-width:719px){html{font-size:20px}}
+@media screen and (min-width:720px) and (max-width:749px){html{font-size:22px}}
+@media screen and (min-width:750px) and (max-width:799px){html{font-size:24px}}
+@media screen and (min-width:800px) and (max-width:1024px){html{font-size:22px}}
+@media screen and (min-width:1025px){html{font-size:24px}}
+
+html,body{
+    border: 0;
+    margin: 0;
+    padding: 0;
+    color: inherit;
+    font-weight: normal;
+    vertical-align: baseline;
+    font-family: "Hiragino Sans GB W3","microsoft yahei","WenQuanYi Micro Hei",sans-serif;
+}
+html{
+    max-width: 750px;
+    width: 100%;
+    margin: 0 auto;
+    background: @base-background;
+}
+body{
+    font-size: @base-font;
+}
+//需要清除原本浏览器的样式文件，但是不能设置html的大小，rem针对的是html根元素
+div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, a, cite, img, sub, sup, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    .baseStyle();
+    font-weight: normal;
+    vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+label,input,textarea{
+    display: inline-block;
+}
+button {
+    outline: none;
+}
+ol, ul {
+    .baseStyle();
+}
+ol, ul, li {
+    list-style: none;
+}
+i, em {
+    font-style: normal;
+}
+blockquote {
+    quotes: none;
+}
+blockquote:before, blockquote:after {
+    content: '';
+    content: none;
+}
+b,i,strong{
+    font-weight: normal;
+}
+a {
+    outline: none;
+    text-decoration: none;
+    color: @base-color;
+}
+input, textarea{
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    outline: none;
+    .baseStyle();
+}
+select, option{
+    font-family: inherit;
+}
+.clear {
+    clear: both;
+}
+.clearfix:before,.clearfix:after{
+    content:"";
+    display:table;
+}
+.clearfix:after{
+    clear:both;
+}
+.clearfix{
+    *zoom:1;
+}
+
+//清除滚动条样式
+::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+    background-color: #f5f5f5;
+}
+::-webkit-scrollbar-track{
+    -webkit-box-shadow:inset 0 0 1px rgba(0,0,0,0);
+    border-radius: 10px;
+    background-color: #f5f5f5;
+}
+::-webkit-scrollbar-thumb{
+    -webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.6);
+    border-radius: 10px;
+    background-color: #f5f5f5;
+}
+
+input[type="buttom"],input[type="reset"],input[type="submit"],input[type="search"]{
+    -webkit-appearance:none;
+}
+
+//当前页面跟节点背景样式
+.wrap_bg{
+    background: #fff;
+}
+.wrap_gg{
+    background:@base-background;
+}

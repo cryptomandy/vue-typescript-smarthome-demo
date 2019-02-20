@@ -1,0 +1,67 @@
+@import "./class";
+@import "./fn/setonepx";
+//flex布局 和 子元素对其方式，默认两边对齐
+.fj(@type: space-between){
+    display: flex;
+    justify-content: @type;
+}
+//宽高
+.wh(@width, @hight){
+    width: @width;
+    height: @hight;
+}
+//size and  font
+.sc(@size, @color){
+    font-size: @size;
+    color: @color;
+}
+//大标题
+.big_title{
+    text-align: left;
+    padding: 30/@rem 0 30/@rem 30/@rem;
+    .sc(36/@rem,@big-title);
+    background: #fff;
+    margin-bottom: 20/@rem;
+}
+
+//字符截取：多行
+.moreText(@num:2){
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: @num;
+    overflow: hidden;
+}
+
+//图标圆角设定；
+.radius(@radius: 30){
+    border-radius: @radius/@rem;
+    -webkit-border-radius: @radius/@rem;
+}
+
+//图标基本css
+.setIcon(@width,@height, @radius:30/@rem, @bg: @dark-m, @color: #fff){
+    width: @width;
+    height: @height;
+    line-height: @height;
+    color: @color;
+    background: @bg;
+    border-radius: @radius;
+    display: inline-block;
+    text-align: center;
+}
+// 主要小图标
+//默认箭头向右
+//小箭头: @direction == -135(向上) , @direction == -45deg(向右) , @direction == 45(向下)，@direction == 135(向左)
+.arrowCss(@size:20/@rem, @border:2/@rem, @color:@text-tip, @direction: -45deg){ //依次为宽度，border宽，颜色，和方向
+    display: inline-block;
+    width: @size;
+    height: @size;
+    border-right: @border solid @color;
+    border-bottom: @border solid @color;
+    transform: rotate(@direction);
+    position: absolute;
+    right: 30/@rem;
+    top: 50%;
+    margin-top: -@size/2;
+}
+
